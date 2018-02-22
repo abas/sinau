@@ -26,4 +26,6 @@
     <string name="list_marker">List Marker</string>
     <string name="maps">Maps</string>
     <string name="login">Login</string>
+    <string name="title_activity_register">Sign Up</string>
+    <string name="register">Register</string>
 </resources>

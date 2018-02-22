@@ -26,6 +26,10 @@
                 android:id="@+id/auth_login"
                 android:icon="@drawable/ic_lock_black_24dp"
                 android:title="@string/login" />
+            <item
+                android:id="@+id/auth_register"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/register"/>
         </menu>
     </item>
 
