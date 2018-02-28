@@ -11,7 +11,7 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import android.content.Intent
-
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -35,11 +35,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
+//        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
+//            drawer_layout.closeDrawer(GravityCompat.START)
+//        } else {
+//        }
+//        super.onBackPressed()
+
+        // Do nothing
+        System.gc();
+        System.exit(0);
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -70,17 +74,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.about -> {
 
             }
-            R.id.auth_login -> {
-                val intent = Intent(this@MainActivity, LoginActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.auth_register -> {
-                val intent = Intent(this@MainActivity, RegisterActivity::class.java)
-                startActivity(intent)
+            R.id.auth_logout -> {
+//                val intent = Intent(this@MainActivity, SplashScreen::class.java)
+//                startActivity(intent)
+//                System.gc();
+                System.exit(0);
             }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    override fun onStop() {
+        
+    }
 }
+
