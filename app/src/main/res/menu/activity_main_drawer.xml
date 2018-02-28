@@ -12,25 +12,21 @@
             android:id="@+id/list_marker"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/list_marker" />
-        <item
-            android:id="@+id/about"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:tooltipText="about this apps"
-            android:title="@string/about" />
-
     </group>
-
-    <item android:title="Authentication">
+    <item android:title="">
         <menu>
             <item
-                android:id="@+id/auth_login"
-                android:icon="@drawable/ic_lock_black_24dp"
-                android:title="@string/login" />
-            <item
-                android:id="@+id/auth_register"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/register"/>
+                android:id="@+id/about"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="About"
+                />
         </menu>
     </item>
+
+    <item
+        android:id="@+id/auth_logout"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:title="@string/logout"/>
+
 
 </menu>
