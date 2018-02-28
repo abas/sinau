@@ -1,93 +1,90 @@
-package io.github.abas.sinaudev
+package io.github.abas.sinaudev;
 
-import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.design.widget.NavigationView
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
-import android.content.Intent
-import android.widget.Toast
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.DrawerLayout.DrawerListener;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import io.github.abas.sinaudev.R.id;
+import java.util.HashMap;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+public final class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
+    private HashMap _$_findViewCache;
 
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-//        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show()
-//        }
-
-        val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        nav_view.setNavigationItemSelectedListener(this)
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.setContentView(2131361820);
+        this.setSupportActionBar((Toolbar)this._$_findCachedViewById(id.toolbar));
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle((Activity)this, (DrawerLayout)this._$_findCachedViewById(id.drawer_layout), (Toolbar)this._$_findCachedViewById(id.toolbar), 2131558474, 2131558473);
+        ((DrawerLayout)this._$_findCachedViewById(id.drawer_layout)).addDrawerListener((DrawerListener)toggle);
+        toggle.syncState();
+        ((NavigationView)this._$_findCachedViewById(id.nav_view)).setNavigationItemSelectedListener((OnNavigationItemSelectedListener)this);
     }
 
-    override fun onBackPressed() {
-//        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-//            drawer_layout.closeDrawer(GravityCompat.START)
-//        } else {
-//        }
-//        super.onBackPressed()
-
-        // Do nothing
+    public void onBackPressed() {
         System.gc();
         System.exit(0);
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
-        return true
+    public boolean onCreateOptionsMenu(@NotNull Menu menu) {
+        Intrinsics.checkParameterIsNotNull(menu, "menu");
+        this.getMenuInflater().inflate(2131427329, menu);
+        return true;
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
+    public boolean onOptionsItemSelected(@NotNull MenuItem item) {
+        Intrinsics.checkParameterIsNotNull(item, "item");
+        switch(item.getItemId()) {
+            case 2131230744:
+            return true;
+            default:
+            return super.onOptionsItemSelected(item);
         }
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
-        when (item.itemId) {
-            R.id.maps -> {
-
-            }
-            R.id.list_marker -> {
-
-            }
-            R.id.about -> {
-
-            }
-            R.id.auth_logout -> {
-//                val intent = Intent(this@MainActivity, SplashScreen::class.java)
-//                startActivity(intent)
-//                System.gc();
-                System.exit(0);
-            }
+    public boolean onNavigationItemSelected(@NotNull MenuItem item) {
+        Intrinsics.checkParameterIsNotNull(item, "item");
+        switch(item.getItemId()) {
+            case 2131230752:
+            System.exit(0);
+            case 2131230726:
+            case 2131230823:
+            case 2131230827:
+            default:
+            ((DrawerLayout)this._$_findCachedViewById(id.drawer_layout)).closeDrawer(8388611);
+            return true;
         }
-
-        drawer_layout.closeDrawer(GravityCompat.START)
-        return true
     }
 
-    override fun onStop() {
-        
+    public View _$_findCachedViewById(int var1) {
+        if(this._$_findViewCache == null) {
+        this._$_findViewCache = new HashMap();
+    }
+
+        View var2 = (View)this._$_findViewCache.get(Integer.valueOf(var1));
+        if(var2 == null) {
+            var2 = this.findViewById(var1);
+            this._$_findViewCache.put(Integer.valueOf(var1), var2);
+        }
+
+        return var2;
+    }
+
+    public void _$_clearFindViewByIdCache() {
+        if(this._$_findViewCache != null) {
+        this._$_findViewCache.clear();
+    }
+
     }
 }
-
