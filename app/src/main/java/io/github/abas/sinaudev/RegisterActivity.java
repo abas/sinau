@@ -1,9 +1,11 @@
 package io.github.abas.sinaudev;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
@@ -102,5 +104,10 @@ public class RegisterActivity extends AppCompatActivity {
             call.cancel();
             call = null;
         }
+    }
+
+    public void LoginControll(View view) {
+        Intent intent = new Intent(this,LoginActivity.class);
+        startActivity(intent);
     }
 }
