@@ -1,5 +1,6 @@
 package io.github.abas.sinaudev;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -88,7 +89,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.about) {
 
         } else if (id == R.id.auth_logout) {
-
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
